@@ -24,14 +24,14 @@
                 <a href="#" class="text-white mr-2 header-search-icon" title="Search" data-toggle="tooltip" data-placement="bottom"><i class="fas fa-search"></i></a>
                 <span class="text-white mr-2 header-chat-icon" title="Chat" data-toggle="tooltip" data-placement="bottom"><i class="fas fa-comment"></i></span>
                 <a href="#" class="mr-2"><img title="My Profile" data-toggle="tooltip" data-placement="bottom" style="width: 32px; height: 32px; border-radius: 16px" src="https://gravatar.com/avatar/f64fc44c03a8a7eb1d52502950879659?s=128" /></a>
-                <a class="btn btn-sm btn-success mr-2" href="#">Create Post</a>
-                <form action="{{ route('logout') }}" method="POST" class="d-inline">
+                <a class="btn btn-sm btn-success mr-2" href="{{ route('create-post') }}">Create Post</a>
+                <form action="{{ route('logout') }}" method="POST"  class="d-inline">
                     @csrf
                     <button class="btn btn-sm btn-secondary">Sign Out</button>
                 </form>
             </div>
         @else
-            <form action="{{ route('login') }}" method="post" class="mb-0 pt-2 pt-md-0">
+            <form action="{{ route('login') }}" method="POST" class="mb-0 pt-2 pt-md-0">
                 @csrf
                 <div class="row align-items-center">
                     <div class="col-md mr-0 pr-md-0 mb-3 mb-md-0">
