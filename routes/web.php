@@ -14,8 +14,10 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 // User related routes
-Route::get('/',[UserController::class, 'showCorrectHomePage']);
+Route::get('/',[UserController::class, 'showCorrectHomePage'])
+    ->name('show-home');
 Route::post('/register', [UserController::class, 'register'])
     ->name('register');
 Route::post('/login', [UserController::class, 'login'])
