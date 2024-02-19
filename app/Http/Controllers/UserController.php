@@ -56,4 +56,28 @@ class UserController extends Controller
         auth()->logout();
         return redirect('/')->with('success', 'Visit Again');
     }
+
+    public function getLoginPage()
+    {
+        return redirect('/');
+    }
+
+    public function getLogoutPage()
+    {
+        return redirect('/');
+    }
+
+    public function getRegisterPage()
+    {
+        return redirect('/');
+    }
+
+    public function profile(User $username)
+    {
+        return view('profile-post', [
+            'username' => $username->username,
+            'posts' => $username->posts()->latest()->get(),
+            'postCount' => $username->posts()->count(),
+        ]);
+    }
 }
